@@ -4,9 +4,13 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
     <title><%= htmlWebpackPlugin.options.title %></title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <link rel="icon" type="image/png" href="/app/assets/img/favicon.png" />
+
+
+      <%= require('html-loader!./assets/html/head.html') %>
+
+
+
 
   </head>
 
@@ -35,7 +39,9 @@
             <div class="columns">
 
               <div class="column">
-                <img src="app/assets/img/logo.png"></img>
+                    LOGO ?
+
+                    recently registered ???
               </div>
 
               <div class="column">
@@ -60,8 +66,6 @@
 
 
 
-
-
           </div>
         </div>
       </section>
@@ -70,7 +74,12 @@
 
       <div id="dashboard" class="box  has-small-text-mobile" style="overflow-x:auto; min-height:480px;">
 
+        Check to see if an alias is available...uses Vue
+        <div class="alias-search-container">
+          <input class="alias-search">
+        </div>
 
+        ->   register that alias
       </div>
 
 
@@ -84,6 +93,8 @@
 
               <div class="column">
 
+                    Download the NPM library with code to help
+
               </div>
 
 
@@ -101,7 +112,7 @@
 
 
 
- 
+
 
 
   </div>
@@ -113,5 +124,7 @@
 
       <a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647;"><i class="icon-arrow-up"></i></a>
 
+
   </body>
+
 </html>

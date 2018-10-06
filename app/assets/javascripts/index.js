@@ -11,14 +11,7 @@ import whiteLogo from '../img/logo.png'
 
 
 
-
-
-import brutePool from '../img/0xbtcpool.png'
-import TokenMiningPool from '../img/tokenminingpool.png'
-import _0xPool from '../img/mikers.png'
-import PizzaPool from '../img/pizza.png'
-
-
+ 
 import Vue from 'vue'
 
 import AlertRenderer from './alert-renderer'
@@ -27,7 +20,6 @@ import HomeRenderer from './home-renderer'
 import EthHelper from './ethhelper'
 
 import HomeDashboard from './home-dashboard'
-import WalletDashboard from './wallet-dashboard'
 
 
 var homeRenderer= new HomeRenderer()
@@ -35,7 +27,6 @@ var homeRenderer= new HomeRenderer()
 var alertRenderer = new AlertRenderer();
 var ethHelper = new EthHelper();
 
-var wallet = new WalletDashboard();
 
 var navbar = new Vue({
   el: '#navbar',
@@ -56,13 +47,6 @@ $(document).ready(function(){
       var web3 = ethHelper.init( alertRenderer);
 
       homeRenderer.init(ethHelper);
-    }
-
-
-    if($("#wallet").length > 0){
-      // var web3 = ethHelper.init( alertRenderer);
-
-      wallet.init(alertRenderer,ethHelper);
     }
 
 
