@@ -54,6 +54,7 @@ export default class EthHelper {
 
        var contractAddress = this.getContractAddress() ;
 
+/*
        var difficulty = await tokenContract.getMiningDifficulty().toNumber() ;
 
        var challenge_number = await tokenContract.getChallengeNumber()  ;
@@ -74,63 +75,13 @@ export default class EthHelper {
 
         var epoch_count = await tokenContract.epochCount()
 
-       var rewards_since_readjustment = epoch_count % _BLOCKS_PER_READJUSTMENT ;
+  */
 
-
-       var current_eth_block = web3.eth.blockNumber;
-
-       var eth_blocks_since_last_difficulty_period = current_eth_block - latestDifficultyPeriodStarted;
-       var seconds_since_readjustment = eth_blocks_since_last_difficulty_period * 15;
-
-
-       var seconds_per_reward = seconds_since_readjustment / rewards_since_readjustment;
-
-
-       var hashrateEstimate = this.estimateHashrateFromDifficulty(  difficulty, seconds_per_reward  )
-
-
-      var decimals = Math.pow(10,8);
-       var renderData = {
-         contractUrl: 'https://etherscan.io/address/'+contractAddress,
-         contractAddress : contractAddress,
-         difficulty: difficulty,
-         challenge_number: challenge_number,
-         amountMined: (parseInt(amountMined) / decimals),
-         totalSupply: (parseInt(totalSupply) / decimals),
-         hashrateEstimate: hashrateEstimate,
-         lastRewardTo: lastRewardTo,
-         lastRewardAmount: (parseInt(lastRewardAmount) / decimals),
-         lastRewardEthBlockNumber: lastRewardEthBlockNumber
-
-
-       }
-
-       //dashboardRenderer.renderContractData(renderData);
-
-
-       callback(renderData);
+       callback( {} );
 
     }
 
-    estimateHashrateFromDifficulty(difficulty, seconds_per_reward){
 
-      //hashrate *= (_IDEAL_BLOCK_TIME_SECONDS / seconds_per_reward)
-
-
-        var hashrate = web3utils.toBN(difficulty)
-              .mul( web3utils.toBN(2)
-              .pow(  web3utils.toBN(22) ))
-              .div( web3utils.toBN(_IDEAL_BLOCK_TIME_SECONDS ))
-
-              //???
-     hashrate *= (_IDEAL_BLOCK_TIME_SECONDS / seconds_per_reward)
-
-      var gigHashes = hashrate / ( parseFloat( web3utils.toBN(10).pow( web3utils.toBN(9) )) )
-
-       console.log('hashrate is ',hashrate )
-     return gigHashes.toFixed(2).toString() + " GH/s"
-
-    }
 
     getWeb3ContractInstance(web3, contract_address, contract_abi )
     {
