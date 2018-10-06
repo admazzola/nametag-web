@@ -1,43 +1,12 @@
 
- ## Lava Wallet
+# 0xBitcoin Web
 
+The uncompiled code for 0xbitcoin.org, 0xbitcoin.github.io
 
+### Commands 
 
+npm run dev 
+    Starts a local dev server to serve the website as a test 
 
- ####
-Contract is at https://github.com/0xbitcoin/lava-wallet
-
-
-Will use EIP 712
-https://medium.com/metamask/scaling-web3-with-signtypeddata-91d6efc8b290
-
-https://github.com/ukstv/sign-typed-data-test/blob/master/contracts/SignTypedData.sol#L11
-
-https://github.com/danfinlay/js-eth-personal-sign-examples
-
-
-https://programtheblockchain.com/posts/2018/02/17/signing-and-verifying-messages-in-ethereum/
-
-
-## todo
-1. add more methods
-2. auto update balances every 30 seconds  
-
-
-
-
-### Published on Ropsten
-
-ECRecover
-0x57b8bf55a05dd481b4f8c5fda9dbaa937799db69
-
-LavaWallet
-0x38d5665ec478e0340b46a062071a2694bbc0b451
-
-
-## smart contract todo
--Add a token withdrawl mechanism  
-
-
-## HOW TO TEST
-npm run dev
+npm run webpack 
+     Compiles the website and outputs the static files in  /public 

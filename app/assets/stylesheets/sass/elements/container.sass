@@ -1,7 +1,7 @@
 .container
   margin: 0 auto
   position: relative
-  +desktop
+  +from($desktop)
     max-width: $desktop - (2 * $gap)
     width: $desktop - (2 * $gap)
     &.is-fluid
@@ -9,17 +9,17 @@
       margin-right: $gap
       max-width: none
       width: auto
-  +until-widescreen
+  +until($widescreen)
     &.is-widescreen
       max-width: $widescreen - (2 * $gap)
       width: auto
-  +until-fullhd
+  +until($fullhd)
     &.is-fullhd
       max-width: $fullhd - (2 * $gap)
       width: auto
-  +widescreen
+  +from($widescreen)
     max-width: $widescreen - (2 * $gap)
     width: $widescreen - (2 * $gap)
-  +fullhd
+  +from($fullhd)
     max-width: $fullhd - (2 * $gap)
     width: $fullhd - (2 * $gap)

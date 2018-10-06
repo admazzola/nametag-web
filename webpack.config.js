@@ -1,7 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
 
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
@@ -26,21 +25,16 @@ var webpackPlugins = [
         'process.env': {
           NODE_ENV: '"production"'
         }
-      }),
-      new CopyWebpackPlugin([
-            {from:'app/assets/img',to:'app/assets/img'}
-        ])
+      })
 ]
 
 
 
 const routesData = {
   routes: [
-    {url: '/', title: 'Lava Wallet', template: 'app/landing.html', filename: 'index.html'},
-    {url: '/about', title: 'Lava Wallet - About', template: 'app/about.html', filename: 'about.html'},
-    {url: '/wallet', title: 'Lava Wallet', template: 'app/wallet.html', filename: 'wallet.html'},
-    {url: '/legacy', title: 'Legacy Lava Wallet', template: 'app/legacy.html', filename: 'legacy.html'}
-   ]
+    {url: '/', title: '0xBitcoin', template: 'app/index.html', filename: 'index.html'},
+    {url: '/wallet', title: 'Wallet', template: 'app/wallet.html', filename: 'wallet/index.html'},
+  ]
 }
 
 
@@ -59,10 +53,7 @@ routesData.routes.forEach(function(element){
 
 
 module.exports = {
-    entry: [
-      './app/assets/javascripts/index',
-      './app/assets/stylesheets/application.scss'
-   ],
+    entry: ['./app/assets/javascripts/index', './app/assets/stylesheets/application.scss' ],
     output: {
         path: path.resolve(__dirname, 'public'),
         filename: 'bundle.js',

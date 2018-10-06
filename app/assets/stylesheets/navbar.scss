@@ -7,27 +7,22 @@
 
 .navbar-container
 {
-
   max-width: 1000px;
   margin: 0 auto;
 
   align-items: stretch;
   display: flex;
-
-  @media screen and (min-width: 1024px) {
-    min-width: 900px;
-  }
 }
 
 .navbar-start
 {
-  padding-right: 50px;
+      margin-right: 50px;
 
 }
 
 .navbar-end
 {
-    padding-left:50px;
+    margin-left:50px;
 }
 
 .has-dropdown.is-active

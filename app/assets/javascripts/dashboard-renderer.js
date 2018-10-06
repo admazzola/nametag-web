@@ -20,6 +20,8 @@ export default class DashboardRenderer {
         data: dashboardData
       });
 
+
+
  
 
       this.show();

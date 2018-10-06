@@ -126,7 +126,7 @@ export default class WalletDashboard {
 
 
       var contract = this.ethHelper.getWeb3ContractInstance(this.web3  );
-
+     
 
       let getDecimals = new Promise(resolve => {
         contract.decimals( function(error,response){
