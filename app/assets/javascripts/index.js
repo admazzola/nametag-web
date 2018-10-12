@@ -2,7 +2,7 @@
 const $ = require('jquery');
 
 import logo from '../img/0xbitcoin.png'
-import titleLogo from '../img/ntt-logo-main.png'
+import titleLogo from '../img/ntt-logo-2.png'
 import githubLogo from '../img/GitHub-Mark-64px.png'
 import redditLogo from '../img/reddit-mark-64px.png'
 import contractQR from '../img/0xbitcoinContractQR.png'

@@ -1,3 +1,9 @@
+.navbar
+{
+  background: transparent;
+}
+
+
 .navbar-padded
 {
   padding-top: 20px;
@@ -12,6 +18,10 @@
 
   align-items: stretch;
   display: flex;
+
+  color: white;
+
+
 }
 
 .navbar-start
@@ -22,7 +32,13 @@
 
 .navbar-end
 {
-    margin-left:50px;
+
+}
+
+
+.navbar-item img
+{
+  max-height: none;
 }
 
 .has-dropdown.is-active
